@@ -1,14 +1,14 @@
-name: 'Task permutations [hard]'
+name: 'Task subsets [hard]'
 
 on:
   push:
     paths:
-      - 'hard/permutations.py'
+      - 'hard/subsets.py'
   workflow_dispatch:
 
 jobs:
   test-permutations:
-    name: 'test-permutations'
+    name: 'test-subsets'
     runs-on: [ self-hosted ]
     steps:
       - name: Checkout
@@ -22,4 +22,4 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install pytest
       - run: |
-          pytest hard/permutations.py
+          pytest hard/subsets.py
