@@ -15,7 +15,7 @@ name = os.path.split(os.getcwd())[-1]
 random.seed(name)
 _points = {
     'easy': 2,
-    'hard': 5
+    'hard': 4
 }
 
 
