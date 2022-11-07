@@ -4,8 +4,6 @@ import random
 import sys
 import traceback
 
-import deprecated
-
 from prepare import list_tasks
 
 '''
@@ -28,7 +26,7 @@ def pick(root, tasks, cnt, out=sys.stdout):
     print(f'Вариант [{root}]:', file=out)
     for task in variant:
         print(f' - {task} - {pts} pts', file=out)
-    print(f'Все остальные задачи из \'{root}\' стоят {pts / 2} pts\n', file=out)
+    print(f'Все остальные задачи из \'{root}\' стоят {pts / 4} pts\n', file=out)
 
 
 def _precalc(limit):
