@@ -1,12 +1,15 @@
 import random
 
 from pytest import mark
+import inspect
 
 
 def rfloor(n, d):
     """
     Даны два вещественных числа n и d, при чем d - положительное
     "Округлить" n до ближайшего снизу числа, представимого как d * k, где k - целое
+
+    ЗАПРЕЩАЕТСЯ использовать оператор целочисленного деления (двойной /)
 
     rfloor(2.3, 0.7) :returns 2.1  (= 0.7 * 3)
     """
@@ -23,11 +26,13 @@ def rfloor(n, d):
     [-2.5, 0.6, -3.0]
 ])
 def test_unround(data):
+    assert inspect.getsource(rfloor).find('//') == -1
     assert rfloor(data[0], data[1]) == data[2]
 
 
 @mark.parametrize('seed', list(range(20)))
 def test_randomized(seed):
+    assert inspect.getsource(rfloor).find('//') == -1
     random.seed(seed)
     n = random.uniform(-1000.0, 1000.0)
     d = random.uniform(0.0001, 1000.0) ** 0.5
