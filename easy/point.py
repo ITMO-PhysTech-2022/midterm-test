@@ -5,7 +5,7 @@ from pytest import mark
 
 def point(center, r, point):
     """
-    Дана точка center - пара (x, y) и целый радиус r, а также точка point - тоже две координаты
+    Дана точка center - пара (x, y) и целый радиус r, а также точка point (тоже две координаты)
     Вернуть True, если point лежит в круге с центром center и радиусом r, и False иначе
 
     point((0, 2), 3, (0, 0)) :returns True
